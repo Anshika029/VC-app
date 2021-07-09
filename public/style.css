@@ -1,0 +1,224 @@
+/* html{
+    background-color: black;
+} */
+body{
+    margin: 0;
+    padding:0;
+    background-color: black !important;
+    min-height: 100vh;
+    width: 100%;
+}
+
+#video-grid {
+    justify-content: center;
+    text-align: center;
+}
+video {
+    height: 400px; 
+    width: 500px;
+    object-fit: cover;
+    border: 6px solid #4a4a4a;
+     border-radius: 10%;
+    padding: 10px;
+    margin: 10px;
+    /* position: fixed; right: 0; bottom: 0;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto; z-index: -100; */
+    /* background: url(polina.jpg) no-repeat; */
+    /* background-size: cover; */
+    
+}
+.main{
+    min-height: 100vh !important;
+   
+}
+ /* .left{
+    display: inline; */
+    /* flex-direction: column; */
+/* }  */
+
+.right{
+    flex: 0.3;
+    background-color: white;
+    width: 100%;
+    border-radius: 15px; 
+    margin: 20px;
+    display: none;
+    flex-direction: column;
+    margin-bottom: 70px;
+    /* min-height: 100vh; */
+    /* border-radius: 8%; */
+}
+.hand{
+    flex: 0.2;
+    background-color: white;
+    width: 100%;
+    border-radius: 15px; 
+    margin: 20px;
+    display: none;
+    flex-direction: column;
+    margin-bottom: 70px;
+}
+.main_video{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main_control{
+    display: flex;
+    color: black;
+    padding: 5px;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+.control-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 10px;
+    min-width: 70px;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 50%;
+    margin: 10px;
+}
+.mute{
+   
+    color: red;
+}
+
+.heading{
+    text-align: left;
+    margin: 20px;
+    font-weight: lighter;
+}
+
+.chat-window{
+    flex-grow: 1;
+    overflow-y: scroll;
+    
+}
+
+.hand-window{
+    flex-grow: 1;
+    overflow-y: scroll;
+    
+}
+
+.message-container{
+    display: flex !important;
+    padding: 22px 12px;
+    margin: 15px;
+    background-color: #f4f0ec;
+    border-radius: 15px;
+}
+
+.message-container input{
+    flex-grow: 1;
+    background-color: transparent;
+    color:black;
+    border: none;
+}
+
+.message-drop{
+    background-color:#e5e4e2;
+    /* border: 1px; */
+    border-radius: 15px;
+    padding: 2px;
+    margin: 8px;
+}
+
+.hand-Raised{
+    background-color: #e5e4e2;
+    border-radius: 15px;
+    padding: 2px;
+    margin: 8px ;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .top {
+    
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .middle {
+      border-radius: 0;
+      margin-bottom: -1px;
+  }
+  .bottom {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  /*Responsive */
+  @media (max-width: 863px){
+      .main_video{
+          text-align: center;
+      }
+  }
+
+  @media (max-width: 680px){
+      video{
+          width: 350px;
+      }
+  }
+  @media (max-width: 630px){
+      video{
+          width: 330px;
+      }
+  }
+  @media (max-width: 440px){
+      video{
+          width: 300px;
+      }
+  }
+
+  @media (max-width: 330px){
+      video{
+          width: 250px;
+          height: 250px;
+      }
+  }
+
+  @media (max-width: 290px){
+      video{
+          width: 200px;
+          height: 200px;
+      }
+  }
+
+  @media (max-width:230px ){
+      video{
+          width: 150px;
+          height: 150px;
+      }
+
+  }
