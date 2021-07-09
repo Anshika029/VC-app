@@ -264,9 +264,9 @@ const getLink = function(){
   socket.emit('shareLink');
 }
 
-socket.on('gettingLink',function(id_room,name_room){
+socket.on('gettingLink',function(id_room,name_room,port){
   let text = document.querySelector("#input").value;
-  text = "http://localhost:3000/room="+name_room+"_"+id_room;
+  text = "http://localhost:"+port+"/room="+name_room+"_"+id_room;
   navigator.clipboard.writeText(text);
 })
 

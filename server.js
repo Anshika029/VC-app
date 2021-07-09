@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3000;
 
 
 const bodyParser = require('body-parser');
@@ -52,7 +53,7 @@ io.on('connection', function(socket) {
         })
 
         socket.on('shareLink',function(){
-          io.to(roomId).emit('gettingLink',room_Id,rname)
+          io.to(roomId).emit('gettingLink',room_Id,rname,port)
         })
 });
    
@@ -60,7 +61,7 @@ io.on('connection', function(socket) {
 });
 
 
-server.listen(3000,function(){
+server.listen(port,function(){
     console.log("server is running");
 })
 
