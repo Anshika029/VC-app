@@ -266,7 +266,7 @@ const getLink = function(){
 
 socket.on('gettingLink',function(id_room,name_room,port){
   let text = document.querySelector("#input").value;
-  text = "http://localhost:"+port+"/room="+name_room+"_"+id_room;
+  text = "https://meet-here-app.herokuapp.com/room="+name_room+"_"+id_room;
   navigator.clipboard.writeText(text);
 })
 
