@@ -18,7 +18,7 @@ video {
     width: 500px;
     object-fit: cover;
     border: 6px solid #4a4a4a;
-     border-radius: 10%;
+    border-radius: 10%;
     padding: 10px;
     margin: 10px;
     /* position: fixed; right: 0; bottom: 0;

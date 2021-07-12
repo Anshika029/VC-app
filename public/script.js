@@ -118,14 +118,14 @@ const muteButton = function(){
   const html = `<i class="fas fa-microphone-slash"></i>`
   document.querySelector('.mute-button').innerHTML = html;
   document.querySelector('.mute-button').style.cssText = 'background-color: white; color: #4a4a4a'
-  document.querySelector('video').style.cssText = 'border: none'
+  document.querySelector('video').style.cssText = 'border: 6px solid #4a4a4a'
 }
 
 const unmuteButton = function(){
   const html = `<i class=" fas fa-microphone "></i>`
   document.querySelector('.mute-button').innerHTML = html;
   document.querySelector('.mute-button').style.cssText = 'background-color:#4a4a4a ; color: white'
-  document.querySelector('video').style.cssText = 'border: 2px solid #ffff00'
+  document.querySelector('video').style.cssText = 'border: 4px solid #7df9ff'
 }
 
 //Video open or close
@@ -216,30 +216,26 @@ const exitMsg = function(){
   document.querySelector('.left').style.cssText = 'flex: 1 ; display: inline; flex-direction: none;'
 }
 
-const handRaise = function(){
-  socket.emit('raise');
+const handRaise = function(val){
+  socket.emit('raise',val);
   
 }
 
-socket.on('handRaise',function(userName){
-  var y = document.querySelector('.right');
-  var h = document.querySelector('.hand');
+socket.on('handRaise',function(userName,myVal){
+ 
+   var h = document.querySelector('.hand');
 
   if(h.style.display === 'none')
   {
-    if(y.style.display === 'flex')
-    {
-      y.style.display = 'none'
-      document.querySelector('.chat').style.cssText = 'background-color: #4a4a4a; color: white'
-    }
-    h.style.display = 'flex';
-    $('.raiseHand').append(`<li class="hand-Raised">${userName === myName ? "You " : userName} "raised hand" </li>`);
+    
+     h.style.display = 'flex';
+    
     
     openHand()
   }
   else
   {
-    h.style.display = 'none';
+     h.style.display = 'none';
     closeHand()
   }
   ;
@@ -247,11 +243,13 @@ socket.on('handRaise',function(userName){
 
 const openHand = function(){
   document.querySelector('.raise').style.cssText = 'background-color:white ; color: #4a4a4a'
+  document.querySelector('video').style.cssText = 'border: 4px solid #ffff00'
 }
 
 const closeHand = function(){
   document.querySelector('.raise').style.cssText = 'background-color: #4a4a4a ; color: white'
-  document.querySelector('.left').style.cssText = 'flex: 1 ; display: inline; flex-direction: none;'
+  // document.querySelector('.left').style.cssText = 'flex: 1 ; display: inline; flex-direction: none;'
+  document.querySelector('video').style.cssText = 'none'
 }
 
 const exitHand = function(){
