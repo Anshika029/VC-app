@@ -5,6 +5,7 @@ const peer = new Peer();
 var constraints = { audio: true, video: true };
 const videoGrid = document.getElementById("video-grid");
 const myVideo = document.createElement("video");
+const name = document.createElement("span");
 myVideo.muted = false;
 let myVideoStream;
 
@@ -118,19 +119,20 @@ const muteButton = function(){
   const html = `<i class="fas fa-microphone-slash"></i>`
   document.querySelector('.mute-button').innerHTML = html;
   document.querySelector('.mute-button').style.cssText = 'background-color: white; color: #4a4a4a'
-  document.querySelector('video').style.cssText = 'border: 6px solid #4a4a4a'
+  // document.querySelector('video').style.cssText = 'border: 6px solid #4a4a4a'
 }
 
 const unmuteButton = function(){
   const html = `<i class=" fas fa-microphone "></i>`
   document.querySelector('.mute-button').innerHTML = html;
   document.querySelector('.mute-button').style.cssText = 'background-color:#4a4a4a ; color: white'
-  document.querySelector('video').style.cssText = 'border: 4px solid #7df9ff'
+//   document.querySelector('video').style.cssText = 'border: 4px solid #7df9ff'
 }
 
 //Video open or close
 const video = ()=>{
   let enable = myVideoStream.getVideoTracks()[0].enabled;
+ 
   if(enable)
   {
     myVideoStream.getVideoTracks()[0].enabled=false;
@@ -160,16 +162,13 @@ const playVideo = function(){
 
 //chat open or close
 const chat = function(){
-  var y = document.querySelector('.hand');
+  console.log("chat open")
+ 
   var x = document.querySelector('.right');
   
   if(x.style.display === "none")
        {
-         if(y.style.display === 'flex')
-          {
-            y.style.display = 'none'
-            document.querySelector('.raise').style.cssText = 'background-color: #4a4a4a ; color: white'
-          }
+         
         x.style.display = "flex";
          openChat();
        } 
@@ -216,47 +215,6 @@ const exitMsg = function(){
   document.querySelector('.left').style.cssText = 'flex: 1 ; display: inline; flex-direction: none;'
 }
 
-const handRaise = function(val){
-  socket.emit('raise',val);
-  
-}
-
-socket.on('handRaise',function(userName,myVal){
- 
-   var h = document.querySelector('.hand');
-
-  if(h.style.display === 'none')
-  {
-    
-     h.style.display = 'flex';
-    
-    
-    openHand()
-  }
-  else
-  {
-     h.style.display = 'none';
-    closeHand()
-  }
-  ;
-})
-
-const openHand = function(){
-  document.querySelector('.raise').style.cssText = 'background-color:white ; color: #4a4a4a'
-  document.querySelector('video').style.cssText = 'border: 4px solid #ffff00'
-}
-
-const closeHand = function(){
-  document.querySelector('.raise').style.cssText = 'background-color: #4a4a4a ; color: white'
-  // document.querySelector('.left').style.cssText = 'flex: 1 ; display: inline; flex-direction: none;'
-  document.querySelector('video').style.cssText = 'none'
-}
-
-const exitHand = function(){
-  document.querySelector('.hand').style.cssText = 'display: none;'
-  document.querySelector('.raise').style.cssText = 'background-color: #4a4a4a; color: white'
-  document.querySelector('.left').style.cssText = 'flex: 1 ; display: inline; flex-direction: none;'
-}
 
 const getLink = function(){
   socket.emit('shareLink');

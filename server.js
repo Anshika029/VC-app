@@ -48,9 +48,7 @@ io.on('connection', function(socket) {
         socket.on('message',function(message){
             io.to(roomId).emit('updateMessage',message,userName)
         })
-        socket.on('raise',function(val){
-          io.to(roomId).emit('handRaise',userName,val)
-        })
+       
 
         socket.on('shareLink',function(){
           io.to(roomId).emit('gettingLink',room_Id,rname,port)
