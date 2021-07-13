@@ -87,16 +87,19 @@ let msg = $('input');
 $('html').keydown(function(e){
    if(e.which == 13 && msg.val().length !=0){
      console.log(msg.val())
+     document.querySelector('.chat').style.cssText = 'background-color: #e9967a; color: black'
        socket.emit('message',msg.val());
        msg.val('')
    }
 })
 
 socket.on('updateMessage',function(message,userName){
+  document.querySelector('.chat').style.cssText = 'background-color: #e9967a; color: black'
     $('.messages').append(`<li class="message-drop"><b>${userName === myName ? "You" : userName}</b><br>${message}</li>`);
-    if(userName === myName)
+    if(userName != myName)
     {
       $('li').style.cssText = 'justify-content: right'
+      
     }
      
 })

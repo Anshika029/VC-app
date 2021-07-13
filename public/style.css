@@ -45,7 +45,7 @@ video {
     margin: 20px;
     display: none;
     flex-direction: column;
-    margin-bottom: 70px;
+    margin-bottom: 90px;
     /* min-height: 100vh; */
     /* border-radius: 8%; */
 }
@@ -75,6 +75,7 @@ video {
     position: fixed;
     bottom: 0;
     width: 100%;
+    background-color: #36454f;
     
 }
 
